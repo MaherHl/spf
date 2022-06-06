@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import bg2 from '../pics/bg2.jpg'
+
 const About = () => {
   return (
     <>

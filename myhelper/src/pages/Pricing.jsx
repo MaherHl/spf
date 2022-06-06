@@ -13,7 +13,7 @@ const Pricing = () => {
          <h1  className='text-org2 font-main  font-bold  text-4xl'>No Fee Until You Have Found Someone To Hire</h1>
          <div className='flex mt-3'>
              <img src={ivr} className='w-8' alt="" />
-            <p className='font-Verdana text-gray-600 pt-1 ml-2'> Free access to list of available worker  </p>
+            <p className='font-Verdana text-gray-600 pt-1 ml-2'> Free access to list of available workers  </p>
 
          </div>
          <div className="flex mt-2">
@@ -28,6 +28,7 @@ const Pricing = () => {
 
 
      </div>
+     <div className='bg-bk py-10 '>
      <div className=' container mt-10 mb-10 grid grid-cols-4 gap-4'>
      <div className="bg-gray-100 flex items-center">
   
@@ -251,6 +252,8 @@ const Pricing = () => {
 </div>
 
      </div>
+     </div>
+    
      <Footer/>
     </> 
   )

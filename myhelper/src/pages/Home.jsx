@@ -12,6 +12,8 @@ import wh from '../pics/wh.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import arr from '../pics/arr.png'
+import { Link } from 'react-router-dom'
+
 
 // ..
 AOS.init();
@@ -101,15 +103,19 @@ const Home = () => {
              data-aos-duration="2000"
       className='w-1/4 relative ml-32' >
       <img src={pn} className="rounded-3xl absolute mix-blend-overlay " alt="" />
+      <Link to="painters">
       <button className='bg-white absolute mb-8 mx-auto text-3xl flex  rounded-md px-4 h-11 inset-x-0 bottom-0 text-org'> Painters <img src={arr} alt="" /></button>
+      </Link>
 
       </div>
       <div data-aos="fade-down" 
         data-aos-easing="linear"
              data-aos-duration="2000" className='w-1/4 ml-3 relative '>
         <img src={wh} className="rounded-3xl  " alt="" />
-        <button className='bg-white  absolute mix-blend-overlay mb-8 mx-auto text-3xl flex  rounded-md px-4 h-11 inset-x-0 bottom-0 text-org'> WareHouse  
-        <img src={arr}  className="ml-20 " alt="" /> </button>        
+        <Link to='/warehouse'>
+          <button className='bg-white  absolute mix-blend-overlay mb-8 mx-auto text-3xl flex  rounded-md px-4 h-11 inset-x-0 bottom-0 text-org'> WareHouse  <img src={arr}  className=" " alt="" /></button>        
+        </Link>
+
         </div>
 
       <div data-aos="fade-left" 
@@ -117,7 +123,10 @@ const Home = () => {
              data-aos-duration="2000"
               className="w-1/4 relative mr-32"> 
        <img src={ct} className="rounded-3xl absolute mix-blend-overlay" alt="" />
+       <Link to="/constructors">
+
        <button className='bg-white absolute mb-8 mx-auto text-3xl flex  rounded-md px-4 h-11 inset-x-0 bottom-0 text-org'> Constructors <img src={arr} alt="" /></button>
+       </Link>
 
        </div>
       
