@@ -3,7 +3,47 @@ import Navbar from '../components/Navbar'
 import sr from '../pics/search.png'
 import pt from '../pics/19317.jpg'
 import Footer from '../components/Footer'
+
+import { useEffect } from 'react'
+import axios from 'axios'
+import { useState } from 'react'
 const Painters = () => {
+   
+  const [painters,setPainters]=useState([])
+  
+
+
+  
+  
+  
+  const c = async () => {
+    try {
+        const resp = await axios.get('http://localhost:3500/painters/allPnt');
+        setPainters(resp.data);
+     
+        
+    } catch (err) {
+        
+        console.error(err);
+    }
+};
+        useEffect(()=>{
+          
+          console.log('i fire once');
+          c()
+        },[]);
+       
+  
+
+    
+
+
+  
+
+  
+  
+  
+  
   return (
     <>
     <Navbar/>
@@ -30,13 +70,32 @@ const Painters = () => {
         <img src={pt} className="mt-4" alt="" />
 
      </div>
-     <div className='bg-bk h-[100vh]'>
-         <div className='conatainer'>
-
-         </div>
+     <div className='bg-bk pb-16 '>
+      <div className='container  gap-20 grid grid-cols-3 '>
+      {painters.map((p)=>
+            <div key={p._id} class=" w-90 mt-16 items-center overflow-hidden rounded-2xl bg-slate-200 shadow-xl">
+            <div class="h-24 bg-white"></div>
+            <div class="-mt-20 flex justify-center">
+              <img class="h-32 rounded-full" src={p.avatar} />
+            </div>
+            <div class="mt-5 mb-1 font-bold font-main px-3 text-center text-lg">{p.full_name}</div>
+            <div class="mb-5 px-3 text-center text-sky-500">{p.email}</div>
+            <blockquote>
+              <p class="mx-2 mb-7 text-center text-base">{p.city}</p>
+            </blockquote>
+          </div>
+           
+         
+       )}
+       
+      </div>
+      
+      
+ 
 
      </div>
-     <Footer/>
+     
+     <Footer className=''/>
     </>
   )
 }
